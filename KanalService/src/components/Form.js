@@ -13,7 +13,7 @@ function Form() {
         if(inputs.login !== '' && inputs.password !== ''){
             if(inputs.login == '123' && inputs.password == '123'){
                 dispatch(login(inputs.login));              
-            }
+            } else { Alert.alert('Введенные данные не верны')}
         } else {
             Alert.alert('Заполните все поля')
         }
@@ -24,14 +24,14 @@ function Form() {
 
             <Text style={styles.AuthText}>Authorization</Text>
 
-            <Text style={{height:39, width:212, fontSize: 24}}>login</Text>
+            <Text style={styles.Text}>login</Text>
 
             <TextInput 
             style={styles.input}
             onChangeText={(text) => setInputs({ ...inputs, login: text })}>
             </TextInput>
 
-            <Text style={{height:39, width:212, marginTop:13, fontSize: 24 }}>password</Text>
+            <Text style={styles.Text}>password</Text>
 
             <TextInput 
             secureTextEntry style={styles.input}
@@ -39,21 +39,34 @@ function Form() {
             </TextInput>
 
             <TouchableOpacity style={styles.submit} onPress={submitHandler}>
-                <Text style={{fontSize: 24}}>Submit</Text>
+                <Text style={{fontSize: 24, font: 'Inter', fontStyle: 'normal', fontWeight: '800', lineHeight: 29,}}>Submit</Text>
             </TouchableOpacity>
         </View>
     );
 }
 
 const styles = {
+    Text: {
+        height:39, 
+        width:212, 
+        fontSize: 24,
+        font: 'Inter',
+        fontStyle: 'normal',
+        fontWeight: '800',
+        lineHeight: 29, 
+    },
     AuthText: {
         fontSize: 24, 
-        width:150, 
+        width:170, 
         height: 29,
         textAlign:"center", 
         color: "#27569C", 
         marginBottom:8, 
-        marginTop:16  
+        marginTop:16,
+        font: 'Inter',
+        fontStyle: 'normal',
+        fontWeight: '800',
+        lineHeight: 29, 
     },
 
     form: {
@@ -61,7 +74,8 @@ const styles = {
         borderWidth: 5, 
         borderColor: "#27569C", 
         height:333, width:290, 
-        alignItems:'center'
+        alignItems:'center',
+        borderRadius: 5,
     },
 
     input: {
