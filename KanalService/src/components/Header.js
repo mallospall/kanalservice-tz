@@ -1,12 +1,14 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
+import Logo from './Logo';
 
-function header() {
+function Header() {
     return (
-        <View>
-            
+        <View style={{height: 118, backgroundColor: '#E4B062', }}>
+            <Logo/>
         </View>
     );
 }
 
-export default header;
+
+export default Header;
