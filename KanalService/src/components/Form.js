@@ -1,13 +1,19 @@
 import { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, Alert} from "react-native";
+import { useDispatch } from 'react-redux';
+import { login } from "../redux/actions/authAction";
 
 
 function Form() {
-    const [inputs, setInputs] = useState({ login: '', password: ''})
+    const [inputs, setInputs] = useState({ login: '', password: ''});
+    
+    const dispatch = useDispatch();
 
     const submitHandler = () => {
         if(inputs.login !== '' && inputs.password !== ''){
-
+            if(inputs.login == '123' && inputs.password == '123'){
+                dispatch(login(inputs.login));              
+            }
         } else {
             Alert.alert('Заполните все поля')
         }

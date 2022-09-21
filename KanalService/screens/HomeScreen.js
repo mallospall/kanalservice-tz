@@ -1,13 +1,25 @@
 /* eslint-disable react/jsx-filename-extension */
-import { View, Text } from 'react-native';
+import { useEffect, useState } from 'react';
+import { View, Text, ScrollView } from 'react-native';
+import Header from '../src/components/Header';
+import Post from '../src/components/Post';
 
 function HomeScreen() {
+  const [posts, setPosts] = useState([]);
+  useEffect(()=>{
+    fetch('https://jsonplaceholder.typicode.com/posts')
+    .then((res)=> res.json())
+    .then((data)=> setPosts(data))
+  },[])
   return (
-    <View>
-      <Text>
-        HomeScreen
-      </Text>
+    <>
+    <Header/>
+    <View style={{alignItems: 'center'}}>
+      <ScrollView>
+      {posts?.map((el)=> <Post post={el} key={posts?.id}/> )}
+      </ScrollView>
     </View>
+    </>
   );
 }
 
