@@ -11,7 +11,7 @@ function Post({user}) {
     },[])
     
     return (
-        <View style={{width: 292, height: 200, margin: 15, borderWidth:5 , borderColor: '#27569C', borderRadius: 6, padding: 10}}>
+        <View style={styles.post}>
             <Text style={styles.text}>Autor: {user?.name}</Text>
             <Text style={styles.text}>Company: {user?.company?.name}</Text>
             <Text style={styles.text}>Title: {post?.title}</Text>
@@ -28,6 +28,22 @@ const styles = {
         fontSize: 16,
         lineHeight: 19,
         alignItems: 'center',
+    },
+    post: {
+        width: 292, 
+        height: 200, 
+        margin: 10, 
+        borderWidth:5 , 
+        borderColor: '#27569C', 
+        borderRadius: 6,
+        padding: 5,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
     }
 }
 

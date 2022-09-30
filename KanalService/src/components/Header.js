@@ -8,7 +8,7 @@ function Header() {
     const { auth } = useSelector((s)=> s)
 
     return (
-        <View style={{height: 118, backgroundColor: '#E4B062', justifyContent: 'space-between', flexDirection: 'row' }}>
+        <View style={{height: 118, backgroundColor: '#E4B062', justifyContent: 'space-between', flexDirection: 'row', alignItems:'center' }}>
             <Logo/>
             {auth? <LogoutIcon /> : <></>}
         </View>

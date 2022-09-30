@@ -9,7 +9,7 @@ function LogoutIcon() {
     }
     return (
         <TouchableOpacity onPress={logoutHandler}>
-        <View style={{ gap: 10, padding:10, width:90, height: 83, top: 18 }}>
+        <View style={{ gap: 10, width:90, height: 83, justifyContent:'center' }}>
             <Image source={require('../../assets/Group.png')} resizeMode="contain" style={{width:70, height:63, tintColor: '#27569C' }} />
         </View>
         </TouchableOpacity>

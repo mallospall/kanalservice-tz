@@ -16,7 +16,7 @@ function PostPad({user}) {
         .then((data)=> setPhoto(data[0]))
     },[])
     return (
-        <View style={{width: 325, height: 470, margin: 15, borderWidth:5 , borderColor: '#27569C', borderRadius: 6, padding: 10, flex: 1, }}>
+        <View style={styles.post}>
             <Image source={{ uri: photo?.thumbnailUrl }} style={{height:150, width:150}}/>
             <Text style={styles.text}>Autor: {user?.name}</Text>
             <Text style={styles.text}>Company: {user?.company?.name}</Text>
@@ -34,6 +34,23 @@ const styles = {
         fontSize: 16,
         lineHeight: 19,
         alignItems: 'center',
+    },
+    post: {
+        width: 325, 
+        height: 470,
+        margin: 10, 
+        borderWidth:5 , 
+        borderColor: '#27569C', 
+        borderRadius: 6, 
+        padding: 5, 
+        flex: 1,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
     }
 }
 
